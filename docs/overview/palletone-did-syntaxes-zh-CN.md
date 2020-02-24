@@ -15,12 +15,12 @@ DID语法格式： `did:ptn:<did unique suffix>`
 
 ## Base DID Document
 
-上述DID Document对应的Base DID Document如下所示。Base DID Document被完整包含在DID创建的请求中。
+Base DID Document实例如下所示，Base DID Document会被完整包含在DID创建的请求中。
 
 ```json
 {
     "@context": "https://www.w3.org/ns/did/v1",
-	"controller": ["did:ptn:5678"],
+    "controller": ["did:ptn:5678"],
     "publicKey": [
         {
             "id": "#keys-1",
