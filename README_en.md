@@ -1,6 +1,6 @@
 # Palletone DID Method
 
-[中文]
+[[中文](https://github.com/palletone/palletone-DID/blob/master/README.md)]
 
 version: v0.1
 
@@ -8,16 +8,17 @@ version: v0.1
 
 项目包括部分：
 
-1. PalletOne DID Method概述
-2. DID规范
-3. 可验证声明规范
-4. DID解析器
-5. Sidetree节点
-  - 架构说明
-  - Sidetree Core
-  - Sidetree REST API
-  - CAS REST API
-6. PalletOne区块链去中心化数字身份
-   - RPC API
-   - Palletone智能合约
+- PalletOne DID Method概述
+- DID规范
+- 可验证声明规范
+- DID解析器
+- Sidetree节点
+    - 架构说明
+    - Sidetree Core
+    - Sidetree REST API
+    - CAS REST API
+
+- PalletOne区块链去中心化数字身份
+  - RPC API
+  - Palletone智能合约
 
