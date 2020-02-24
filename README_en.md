@@ -1,8 +1,8 @@
 # Palletone DID Method
 
-[English]
+[中文]
 
-版本: v0.1
+version: v0.1
 
 该仓库是[PalletOne项目](http://pallet.one/)对DID的实施文档，遵守W3C的DID和可验证声明标准、Sidetree协议标准。
 
