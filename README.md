@@ -8,7 +8,7 @@
 
 项目包括部分：
 
-- [PalletOne DID Method概述](https://github.com/palletone/palletone-DID/blob/master/docs/docs/overview/palletone-did-method-overview-zh-CN.md)
+- [PalletOne DID Method概述](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-method-overview-zh-CN.md)
 - [DID规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-syntaxes-zh-CN.md)
 - [可验证声明规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-proof-claim-zh-CN.md)
 - [DID解析器](https://github.com/palletone/palletone-DID/blob/master/docs/did-resolution/palletone-did-resolver-zh-CN.md)

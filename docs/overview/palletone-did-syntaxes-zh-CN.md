@@ -19,7 +19,7 @@ DID语法格式： `did:ptn:<did unique suffix>`
 
 ```json
 {
-    "@context": "https://www.w3.org/ns/did/v1"
+    "@context": "https://www.w3.org/ns/did/v1",
 	"controller": ["did:ptn:5678"],
     "publicKey": [
         {
