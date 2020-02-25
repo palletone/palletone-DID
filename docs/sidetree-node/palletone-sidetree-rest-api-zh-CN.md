@@ -12,7 +12,7 @@
 
 返回400时，会返回对应的code信息，示例如下：
 
-```
+```json
 HTTP/1.1 400 Bad Request
  
 {
@@ -28,17 +28,21 @@ HTTP/1.1 400 Bad Request
 
 #### 1.1.1.1   请求路径
 
+```http
 POST /did/creation HTTP/1.1
+```
+
+
 
 #### 1.1.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.1.1.3   Body数据语法
 
-```
+```json
 {
   "type": "create",
   "suffixData": "Base64URL(suffix data file)",
@@ -48,7 +52,7 @@ POST /did/creation HTTP/1.1
 
 ##### 1.1.1.3.1  Body中suffix data file文件生成语法
 
-```
+```json
 {
   "operationDataHash": "Hash of the encoded operation data string. ",
   "recoveryKey": {
@@ -60,7 +64,7 @@ POST /did/creation HTTP/1.1
 
 ##### 1.1.1.3.2  Body中operation data file文件生成语法：
 
-```
+```json
 {
     "nextUpdateOtpHash": "Hash of the one-time password to be used for the next update.
  ",
@@ -71,7 +75,7 @@ POST /did/creation HTTP/1.1
 
 ##### 1.1.1.3.3  Document Json文件示例
 
-```
+```json
 {
   "publicKey": [
     {
@@ -102,15 +106,15 @@ POST /did/creation HTTP/1.1
 
 #### 1.1.2.1   响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.1.2.2   响应Body数据
 
 通过DID构造的DID Document，示例如下：
 
-```
+```json
 {
   "@context": "https://w3id.org/did/v1",
   "id": "did:sidetree:EiBJz4qd3Lvof3boqBQgzhMDYXWQ_wZs67jGiAhFCiQFjw",
@@ -143,21 +147,23 @@ POST /did/creation HTTP/1.1
 
 当发布了一个DID Document之后，发布者又需要立即使用该DID Document，则在调用的时候将上一个未被写入Blockchain的DID Document写入到DID信息里面，例如：
 
-```
+```json
 did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A;initial-values=ewogICAgICAiQGNvbnRleHQiOiAiaHR0cHM6Ly93M2lkLm9yZy9kaWQvdjEiLAogICAgICAicHVibGljS2V5IjogWwogICAgICAgIHsKICAgICAgICAgICAgImlkIjogIiNrZXkxIiwKICAgICAgICAgICAgInR5cGUiOiAiU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOCIsCiAgICAgICAgICAgICJwdWJsaWNLZXlIZXgiOiAiMDM0ZWUwZjY3MGZjOTZiYjc1ZThiODljMDY4YTE2NjUwMDdhNDFjOTg1MTNkNmE5MTFiNjEzN2UyZDE2ZjFkMzAwIgogICAgICAgIH0KICAgICAgXQogICAgfQ
  
 ```
 
 上述initial-values继续Base64URL解码得到原DID Document如下：
 
-```
+```json
 {
-                    "@context": "https://w3id.org/did/v1",
-                    "publicKey": [{
-                                         "id": "#key1",
-                                         "type": "Secp256k1VerificationKey2018",
-                                         "publicKeyHex": "034ee0f670fc96bb75e8b89c068a1665007a41c98513d6a911b6137e2d16f1d300"
-                    }]
+	"@context": "https://w3id.org/did/v1",
+	"publicKey": [
+        {
+			"id": "#key1",
+			"type": "Secp256k1VerificationKey2018",
+			"publicKeyHex": "034ee0f670fc96bb75e8b89c068a1665007a41c98513d6a911b6137e2d16f1d300"
+        }
+    ]
 }
 ```
 
@@ -165,7 +171,7 @@ did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A;initial-values=ewogICAg
 
 #### 1.2.1.1   请求路径
 
-```
+```http
 GET /did/resolution/<did-or-method-name-prefixed-encoded-original-did-document> HTTP/1.1
 ```
 
@@ -177,13 +183,13 @@ GET /did/resolution/<did-or-method-name-prefixed-encoded-original-did-document> 
 
 1)    标准请求示例
 
-```
+```http
 GET /did/resolution/did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A HTTP/1.1
 ```
 
 2)    未发布DID查询示例
 
-```
+```http
 GET /did/resolution/did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A;initial-values=ewogICAgICAiQGNvbnRleHQiOiAiaHR0cHM6Ly93M2lkLm9yZy9kaWQvdjEiLAogICAgICAicHVibGljS2V5IjogWwogICAgICAgIHsKICAgICAgICAgICAgImlkIjogIiNrZXkxIiwKICAgICAgICAgICAgInR5cGUiOiAiU2VjcDI1NmsxVmVyaWZpY2F0aW9uS2V5MjAxOCIsCiAgICAgICAgICAgICJwdWJsaWNLZXlIZXgiOiAiMDM0ZWUwZjY3MGZjOTZiYjc1ZThiODljMDY4YTE2NjUwMDdhNDFjOTg1MTNkNmE5MTFiNjEzN2UyZDE2ZjFkMzAwIgogICAgICAgIH0KICAgICAgXQogICAgfQ HTTP/1.1
 ```
 
@@ -195,15 +201,15 @@ GET /did/resolution/did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A;ini
 
 #### 1.2.2.1   响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.2.2.2   响应Body数据
 
 返回DID Document文件示例如下：
 
-```
+```json
 {
   "@context": "https://w3id.org/did/v1",
   "id": "did:sidetree:EiBJz4qd3Lvof3boqBQgzhMDYXWQ_wZs67jGiAhFCiQFjw",
@@ -234,15 +240,15 @@ GET /did/resolution/did:sidetree:exKwW0HjS5y4zBtJ7vYDwglYhtckdO15JDt1j5F5Q0A;ini
 
 #### 1.3.1.1   请求路径
 
-```
+```http
 POST /did/updation HTTP/1.1
 ```
 
 #### 1.3.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
  
 
@@ -250,7 +256,7 @@ POST /did/updation HTTP/1.1
 
 Body数据中各个字段说明：
 
-```
+```json
 {
   "protected": "Encoded protected header.",
   "payload": "Encoded update payload JSON object defined by the schema below.",
@@ -260,7 +266,7 @@ Body数据中各个字段说明：
 
 ##### 1.3.1.3.1  Body中Payload字段字段说明
 
-```
+```json
 {
   "type": "update",
   "didUniqueSuffix": "The unique suffix of the DID",
@@ -275,7 +281,7 @@ Body数据中各个字段说明：
 
 1)    添加公钥
 
-```
+```json
 {
   "action": "add-public-keys",
   "publicKeys": [
@@ -290,7 +296,7 @@ Body数据中各个字段说明：
 
 示例：
 
-```
+```json
 {
   "action": "add-public-keys",
   "publicKeys": [
@@ -310,7 +316,7 @@ Body数据中各个字段说明：
 
 2)    删除公钥
 
-```
+```json
 {
   "action": "remove-public-keys",
   "publicKeys": ["Array of 'id' property of public keys to remove."]
@@ -319,7 +325,7 @@ Body数据中各个字段说明：
 
 示例：
 
-```
+```json
 {
   "action": "remove-public-keys",
   "publicKeys": ["#key1", "#key2"]
@@ -330,7 +336,7 @@ Body数据中各个字段说明：
 
 3)    添加服务终端
 
-```
+```json
 {
   "action": "add-service-endpoints",
   "serviceType": "IdentityHub",
@@ -342,7 +348,7 @@ Body数据中各个字段说明：
 
 示例：
 
-```
+```json
 {
   "action": "add-service-endpoints",
   "serviceType": "IdentityHub",
@@ -357,7 +363,7 @@ Body数据中各个字段说明：
 
 4)    移除服务终端
 
-```
+```json
 {
   "action": "remove-service-endpoints",
   "serviceType": "IdentityHub",
@@ -369,7 +375,7 @@ Body数据中各个字段说明：
 
 示例：
 
-```
+```json
 {
   "action": "remove-service-endpoints",
   "serviceType": "IdentityHub",
@@ -382,7 +388,7 @@ Body数据中各个字段说明：
 
 ##### 1.3.1.3.3  Upload的完整示例
 
-```
+```json
 {
   "type": "update",
   "didUniqueSuffix": "EiBQilmIz0H8818Cmp-38Fl1ao03yOjOh03rd9znsK2-8A",
@@ -430,7 +436,7 @@ Body部分无。
 
 #### 1.4.1.1   请求路径
 
-```
+```http
 POST /did/deletion
 ```
 
@@ -438,15 +444,15 @@ POST /did/deletion
 
 #### 1.4.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
  
 
 #### 1.4.1.3   请求Body
 
-```
+```json
 {
   "protected": "Encoded protected header.",
   "payload": "Encoded delete payload JSON object define by the schema below.",
@@ -456,7 +462,7 @@ POST /did/deletion
 
 ##### 1.4.1.3.1  Payload的语法
 
-```
+```json
 {
   "type": "delete",
   "didUniqueSuffix": "The unique suffix of the DID to be deleted.",
@@ -466,7 +472,7 @@ POST /did/deletion
 
 示例：
 
-```
+```json
 {
   "type": "delete",
   "didUniqueSuffix": "EiAJ6AlyUPaEOxXk-AdXoEikeTf7DhcXvF61MfgnjJgazg",
@@ -478,7 +484,7 @@ POST /did/deletion
 
 ### 1.4.2    响应数据
 
-Body部分无
+无。
 
 ## 1.5    DID Recovery
 
@@ -486,19 +492,19 @@ Body部分无
 
 #### 1.5.1.1   请求路径
 
-```
+```http
 POST /did/recovery
 ```
 
 #### 1.5.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.5.1.3   请求Body
 
-```
+```json
 {
   "protected": "Encoded protected header.",
   "payload": "Encoded recovery payload JSON object defined by the schema below.",
@@ -508,7 +514,7 @@ POST /did/recovery
 
 ##### 1.5.1.3.1  Payload的语法
 
-```
+```json
 {
   "type": "recover",
   "didUniqueSuffix": "The unique suffix of the DID to be recovered.",
@@ -523,7 +529,7 @@ POST /did/recovery
 
 ### 1.5.2    响应数据
 
-响应Body数据无。
+`无。`
 
 ## 1.6    Proof Claim Creation
 
@@ -531,17 +537,19 @@ POST /did/recovery
 
 #### 1.6.1.1   请求路径
 
+```http
 POST /claim/creation HTTP/1.1
+```
 
 #### 1.6.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.6.1.3   请求Body数据语法
 
-```
+```json
 {
   "type": "claimCreate",
   "documentHash": "Hash of the encoded operation data string. ",
@@ -551,7 +559,7 @@ POST /claim/creation HTTP/1.1
 
 ##### 1.6.1.3.1  Document Json文件示例
 
-```
+```json
 {
 "type": ["VerifiableCredential", "AlumniCredential"],
   "credentialSubject": {
@@ -575,15 +583,15 @@ POST /claim/creation HTTP/1.1
 
 #### 1.6.2.1   响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.6.2.2   响应Body数据
 
 对应的proof claim文档示例如下：
 
-```
+```json
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -614,21 +622,21 @@ POST /claim/creation HTTP/1.1
 
 #### 1.7.1.1   请求路径
 
-```
-POST /claim/revocation
+```http
+POST /proof/revocation
 ```
 
 #### 1.7.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
  
 
 #### 1.7.1.3   请求Body
 
-```
+```json
 {
   "protected": "Encoded protected header.",
   "payload": "Encoded delete payload JSON object define by the schema below.",
@@ -638,7 +646,7 @@ POST /claim/revocation
 
 ##### 1.7.1.3.1  Payload的语法
 
-```
+```json
 {
   "type": "claimRevocate",
   "claimUniqueSuffix": "The unique suffix of the proof claim to be revocated.",
@@ -651,7 +659,7 @@ POST /claim/revocation
 
 ### 1.7.2    响应数据
 
-返回对应返回值。
+`无。`
 
 ## 1.8 Proof Claim授权
 
@@ -659,21 +667,21 @@ POST /claim/revocation
 
 #### 1.8.1.1   请求路径
 
-```
-POST /claim/authorization
+```http
+POST /proof/authorization
 ```
 
 #### 1.8.1.2   请求头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
  
 
 #### 1.8.1.3   请求Body
 
-```
+```json
 {
   "protected": "Encoded protected header.",
   "payload": "Encoded delete payload JSON object define by the schema below.",
@@ -683,7 +691,7 @@ POST /claim/authorization
 
 ##### 1.8.1.3.1  Payload的语法
 
-```
+```json
 {
   "type": "claimAuthorize",
   "didUniqueSuffix": "The unique suffix of the DID",
@@ -697,15 +705,15 @@ POST /claim/authorization
 
 #### 1.8.2.1   响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.8.2.2   响应Body数据
 
 返回DID Document文件示例如下：
 
-```
+```json
 {
   "authentionID": "A unique number for ",
   "didUniqueSuffix": " The unique suffix of the DID ",
@@ -719,7 +727,7 @@ POST /claim/authorization
 
 #### 1.9.1.1   请求路径
 
-```
+```http
 GET /proof/resolution/<proof id> HTTP/1.1
 ```
 
@@ -733,15 +741,15 @@ GET /proof/resolution/<proof id> HTTP/1.1
 
 #### 1.9.2.1   响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.9.2.2   响应Body数据
 
 返回DID Document文件示例如下：
 
-```
+```json
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
@@ -772,31 +780,31 @@ GET /proof/resolution/<proof id> HTTP/1.1
 
 #### 1.10.1.1 请求路径
 
-```
+```http
 GET /version
 ```
 
 #### 1.10.1.2 请求头
 
-无。
+`无。`
 
 #### 1.10.1.3 请求Body
 
-无
+`无。`
 
 ### 1.10.2  响应数据
 
 #### 1.10.2.1 响应数据头
 
-| 字段名       | 字段值           |
-| ------------ | ---------------- |
-| Content-Type | application/json |
+| 字段名         | 字段值             |
+| -------------- | ------------------ |
+| `Content-Type` | `application/json` |
 
 #### 1.10.2.2 响应Body数据
 
 Body各字段说明：
 
-```
+```json
 [
   {
     "name": "A string representing the name of the service",
@@ -808,7 +816,7 @@ Body各字段说明：
 
 示例：
 
-```
+```json
 HTTP/1.1 200 OK
  
 [
