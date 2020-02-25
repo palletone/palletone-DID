@@ -13,7 +13,7 @@
 - [可验证声明规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-proof-claim-zh-CN.md)
 - [DID解析器](https://github.com/palletone/palletone-DID/blob/master/docs/did-resolution/palletone-did-resolver-zh-CN.md)
 - Sidetree节点
-    - [架构说明](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-overview-zh-CN.md)
+    - [Sidetree节点总体介绍](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-overview-zh-CN.md)
     - [Sidetree Core](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-core-zh-CN.md)
     - [Sidetree REST API](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-rest-api-zh-CN.md)
     - [CAS REST API](https://github.com/palletone/palletone-DID/blob/master/docs/did-resolution/palletone-sidetree-cas-rest-api-zh-CN.md)
