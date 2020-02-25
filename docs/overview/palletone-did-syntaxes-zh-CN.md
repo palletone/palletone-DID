@@ -43,18 +43,18 @@ Base DID Document实例如下所示，Base DID Document会被完整包含在DID�
 }
 ```
 
-Base DID Document示例中各个字段的说明（<font color=#ff0000>*</font>为必须字段，其他为可选字段）：
+Base DID Document示例中各个字段的说明（<img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" />为必须字段，其他为可选字段）：
 
-- <font color=#ff0000 face="黑体">*</font> `context`   单个值或数组，指定DID Document格式符合的语法标准。
+- <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" /> `context`   单个值或数组，指定DID Document格式符合的语法标准。
 
-- `controller`  单个值或数组，DID Document的其他所属者。可以指定其他DID管理该文件，其他DID的权限在后面对应操作authentication、updation、deletion、recovery中进行设定。
+- `controller`  单个值或数组，DID Document的其他所属者。可以指定其他DID管理该文件，其他DID的权限在后面对应操作authentication、updation、deletion、recovery中进行设定。缺省情况由Base DID Document对应的DID Document中DID控制。
 
-- <font color=#ff0000>*</font> `publicKey`  单个值或数组，控制该DID Document的私钥所对应的公钥信息。
-  - <font color=#ff0000>*</font> `id`  公钥的ID，统一以`#keys-<num>`方式表示，`<num>`从`1`开始递增
-  - <font color=#ff0000>*</font> `type`  公钥生成的算法，与链上统一，
+- <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" /> `publicKey`  单个值或数组，控制该DID Document的私钥所对应的公钥信息。
+  - <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" /> `id`  公钥的ID，统一以`#keys-<num>`方式表示，`<num>`从`1`开始递增
+  - <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" /> `type`  公钥生成的算法，与链上统一，
   - `controller`  该公钥的所属者，与上一级别中的`controller`对应。格式是`<DID>#keys-<num>`。默认情况由该文档DID控制。`<DID>`取值在上一级中的`controller`中，`#keys-<num>`为`<DID>`对应的某个公钥`id`。
   - `publicKeyHex`  公钥的十六进制信息。当上述<u>controller为缺省的时候该字段为**必须字段**</u>。
-- <font color=#ff0000>*</font> `authentication`  指定`publicKey`中哪些字段可以用作身份验证。
+- <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" /> `authentication`  指定`publicKey`中哪些字段可以用作身份验证。
 - `updation`  指定`publicKey`中哪些字段可以用作DID Document**<u>更新</u>**操作，比如更新pubkey或者service等信息。
 - `deletion`  指定`publicKey`中哪些字段可以用作DID Document<u>**删除**</u>操作。
 - `recovery`  指定`publicKey`中哪些字段可以用作DID Document<u>**恢复**</u>操作。
@@ -116,9 +116,7 @@ DID Document的示例如下：
 
 上述DID Document示例中，未出现在Base DID Document中的字段的解释如下：
 
-- `id`  DID Document文档的唯一标识符，即为DID。
-
-- `controller`  单个值或数组，DID Document的所属者。可以指定其他DID管理该文件，其他DID的权限在后面对应操作authentication、updation、deletion、recovery中进行设定。
+- <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" />`id`  DID Document文档的唯一标识符，即为DID。
 
 - `service`   表示该DID与关联DID或者其他实体进行通信的方式。该字段一般在发证方的DID Document中进行提供。
 
@@ -126,7 +124,7 @@ DID Document的示例如下：
   - `type`   服务类型，在DID Resolution中进行定义
   - `serviceEndpoint`  代表DID主体或者其他主体运行的网络地址。比如发现服务，社交网络，文件存储服务和可验证的声明存储库服务。服务端点也可以由通用数据交换协议（例如可扩展数据交换）提供。
 
-- `proof`  用于证明DID Document文档的所属权，自签。
+- <img src="C:\Users\Administrator\AppData\Local\YNote\data\yiyaxuelu@163.com\cc29f2e5405e47f8867d1c8dea3b282b\star__.png" alt="img" style="zoom: 67%;" />`proof`  用于证明DID Document文档的所属权，自签。
 
   - `type`  自签算法。
   - `creator`  自签使用的公私钥对。
@@ -136,7 +134,7 @@ DID Document的示例如下：
 
 ## 参考文献
 
-| 说明                     | URL                                                          |
+| 文献名                   | URL                                                          |
 | ------------------------ | ------------------------------------------------------------ |
 | W3C的DID定义V1.0         | https://www.w3.org/TR/did-core/                              |
 | Sidetree Node.js版本说明 | https://github.com/decentralized-identity/sidetree/blob/master/docs/protocol.md<br />https://github.com/decentralized-identity/sidetree/blob/master/docs/protocol.md |
