@@ -4,9 +4,11 @@
 
 版本: v0.1
 
-该仓库是[PalletOne项目](http://pallet.one/)对DID的实施文档，遵守W3C的DID和可验证声明标准、Sidetree协议标准。
+该仓库是[PalletOne区块链项目](http://pallet.one/)对DID的实施文档，遵守W3C的DID和可验证声明标准、Sidetree协议标准。主网信息请参考：[PalletOne区块链浏览器](https://www.palletone.info/)。
 
-项目包括部分：
+
+
+PalletOne-DID项目包括部分：
 
 - [PalletOne DID Method概述](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-method-overview-zh-CN.md)
 - [DID规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-syntaxes-zh-CN.md)
