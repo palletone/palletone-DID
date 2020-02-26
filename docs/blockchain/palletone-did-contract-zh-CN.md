@@ -6,7 +6,7 @@ PalletOne 全节点Console下调用去中心化数字身份合约的命令语法
 
 ###### 获得当前区块高度
 
-```json
+```shell
 > admin.nodeInfo
 {
   id: "2e6941e017c28b19030e86739fae589c81e80c0ee7001addea4634958e0674eb29a29c1eea222f2a849b29f3c18947d7ad6eddc21e01a126b8276eea2264baaf",
