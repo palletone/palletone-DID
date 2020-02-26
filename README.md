@@ -18,6 +18,6 @@
     - [Sidetree REST API](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-rest-api-zh-CN.md)
     - [CAS REST API](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-cas-rest-api-zh-CN.md)
 - PalletOne区块链去中心化数字身份
-   - [RPC API](https://github.com/palletone/palletone-DID/blob/master/docs/blockchain/palletone-did-rpc-api-zh-CN.md)
+   - [REST API](https://github.com/palletone/palletone-DID/blob/master/docs/blockchain/palletone-did-rest-api-zh-CN.md)
    - [Palletone智能合约](https://github.com/palletone/palletone-DID/blob/master/docs/did-resolution/palletone-did-contract-zh-CN.md)
 

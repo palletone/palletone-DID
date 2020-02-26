@@ -1,7 +1,5 @@
 # Palletone DID Method
 
-[[中文](https://github.com/palletone/palletone-DID/blob/master/README.md)]
-
 version: v0.1
 
 该仓库是[PalletOne项目](http://pallet.one/)对DID的实施文档，遵守W3C的DID和可验证声明标准、Sidetree协议标准。
