@@ -11,6 +11,8 @@ DID语法格式： `did:ptn:<did unique suffix>`
 | `did:ptn`           | PalletOne DID 方法名称                                       |
 | `did unique suffix` | DID的唯一标识后缀，生成规则（参考比特币地址的生成规则）如下：<br />`Base58(RIPEMD160(sha256(Base DID Document)))` |
 
+在W3C的[Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/)文档第§4章节中提到，DID还可以有其他的参数，比如`method-specific-id`, `param-name`, `query`,  `query`,  `fragment`等，通过这些参数可以扩展DID URL。
+
 
 
 ## Base DID Document
