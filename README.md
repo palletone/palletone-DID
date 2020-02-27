@@ -1,6 +1,4 @@
-# Palletone DID Method
-
-[[English](https://github.com/palletone/palletone-DID/blob/master/README_en.md)]
+# Palletone 去中心化数字身份
 
 版本: v0.1
 
@@ -8,12 +6,12 @@
 
 
 
-PalletOne-DID项目包括部分：
+PalletOne去中心化数字身份项目包括部分：
 
-- [PalletOne DID Method概述](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-method-overview-zh-CN.md)
-- [DID规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-did-syntaxes-zh-CN.md)
-- [可验证声明规范](https://github.com/palletone/palletone-DID/blob/master/docs/overview/palletone-proof-claim-zh-CN.md)
-- [DID解析器](https://github.com/palletone/palletone-DID/blob/master/docs/did-resolution/palletone-did-resolver-zh-CN.md)
+- [PalletOne DID Method概述](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-did-method-overview-zh-CN.md)
+- [DID规范](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-did-syntaxes-zh-CN.md)
+- [DID解析器](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-did-resolver-zh-CN.md)
+- [可验证声明规范](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-proof-claim-zh-CN.md)
 - Sidetree节点
     - [Sidetree节点总体介绍](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-overview-zh-CN.md)
     - [Sidetree Core](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-core-zh-CN.md)
