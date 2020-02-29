@@ -20,5 +20,5 @@ PalletOne去中心化数字身份项目包括部分：
 - PalletOne区块链去中心化数字身份
    - [REST API](https://github.com/palletone/palletone-DID/blob/master/docs/blockchain/palletone-did-rest-api-zh-CN.md)
    - [Palletone智能合约](https://github.com/palletone/palletone-DID/blob/master/docs/blockchain/palletone-did-contract-zh-CN.md)
-- [安全和隐私注意事项](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-security-privacy-zh-CN.md)
+- [安全和隐私注意事项](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-security-privacy-zh-CN.md)
 
