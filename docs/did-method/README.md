@@ -11,4 +11,6 @@ PalletOne DID Method包括部分：
 - [DID 语法规则](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-did-syntaxes-zh-CN.md)
 - [DID解析器](https://github.com/palletone/palletone-DID/blob/master/docs/did-method/palletone-did-resolver-zh-CN.md)
 - [DID相关REST API](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-sidetree-rest-api-zh-CN.md)
+- [可验证声明规范](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-proof-claim-zh-CN.md)
+- [安全和隐私注意事项](https://github.com/palletone/palletone-DID/blob/master/docs/sidetree-node/palletone-security-privacy-zh-CN.md)
 
