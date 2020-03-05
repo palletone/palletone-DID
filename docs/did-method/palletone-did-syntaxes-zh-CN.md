@@ -27,11 +27,11 @@ Base DID Document实例如下所示，Base DID Document会被完整包含在DID�
         {
             "id": "#keys-1",
             "type": "secp256k1",
-            "publicKeyHex": "04ca29d84972c51af7f09c481951f28f2bb1b5ea03f4997b68977c7be013d7f35c079bec522d0bef84a116498dee4f100d8ceb29cd196bd416b444e17569bf19356b5c62d4d555e73e3341f8cc36edcfe2ebf240fa6a292af39dff68a769ee42c9",
+            "publicKeyHex": "04ca29d84972c51af7f09c481951f28f2bb1b5ea03f4997b68977c7be013d7f35c079bec522d0bef84a116498dee4f100d8ceb29cd196bd416b444e17569bf19356b5c62d4d555e73e3341f8cc36edcfe2ebf240fa6a292af39dff68a769ee42c9"
   		}, {
             "id": "#keys-2",
             "type": "secp256k1",
-            "controller": "did:ptn:5678#keys-1",
+            "controller": "did:ptn:5678#keys-1"
   		}, {
         	"id": "#keys-3",
           	"type": "secp256k1",
